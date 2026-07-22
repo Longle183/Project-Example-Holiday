@@ -1,0 +1,6 @@
+package com.example.demo.entity;
+import java.time.LocalDateTime; import java.util.List;
+public class Order implements java.io.Serializable { private static final long serialVersionUID = 1L; public long id; public String email,receiver,phone,address,note,paymentMethod,status; public double total; public LocalDateTime createdAt; public List<OrderItem> lines;
+    public Order(long id,String email,String receiver,String phone,String address,String note,String paymentMethod,String status,double total,LocalDateTime createdAt,List<OrderItem> lines){this.id=id;this.email=email;this.receiver=receiver;this.phone=phone;this.address=address;this.note=note;this.paymentMethod=paymentMethod;this.status=status;this.total=total;this.createdAt=createdAt;this.lines=lines;}
+    public long getId(){return id;} public String getEmail(){return email;} public String getReceiver(){return receiver;} public String getPhone(){return phone;} public String getAddress(){return address;} public String getNote(){return note;} public String getPaymentMethod(){return paymentMethod;} public String getStatus(){return status;} public double getTotal(){return total;} public LocalDateTime getCreatedAt(){return createdAt;} public List<OrderItem> getLines(){return lines;}
+}

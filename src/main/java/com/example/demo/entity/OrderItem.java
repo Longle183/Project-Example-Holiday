@@ -1,0 +1,2 @@
+package com.example.demo.entity;
+public class OrderItem implements java.io.Serializable { private static final long serialVersionUID = 1L; public String name; public int quantity; public double price; public OrderItem(String name,int quantity,double price){this.name=name;this.quantity=quantity;this.price=price;} public String getName(){return name;} public int getQuantity(){return quantity;} public double getPrice(){return price;} }

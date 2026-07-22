@@ -1,0 +1,4 @@
+package com.example.demo.controller;
+import com.example.demo.dto.*; import com.example.demo.service.SalesService; import org.springframework.http.HttpStatus; import org.springframework.web.bind.annotation.*; import java.util.Map;
+@RestController @RequestMapping("/api/account")
+public class AccountController { private final SalesService service; public AccountController(SalesService service){this.service=service;} @GetMapping public Map<String,Object> profile(@RequestHeader("Authorization")String auth){return service.profile(auth);}@PutMapping public Map<String,Object> update(@RequestHeader("Authorization")String auth,@RequestBody ProfileRequest request){return service.updateProfile(auth,request);}@PutMapping("/password") @ResponseStatus(HttpStatus.NO_CONTENT) public void password(@RequestHeader("Authorization")String auth,@RequestBody ChangePasswordRequest request){service.changePassword(auth,request);} }
